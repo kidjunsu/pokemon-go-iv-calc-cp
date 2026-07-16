@@ -23,32 +23,6 @@
 ### `/운세 생년월일:20000101 태어난시간:1430`
 생년월일(+태어난시간)을 입력하면 오늘 하루 포켓몬GO 테마의 재미용 운세를 봅니다 (종합운/이로치 조우운/레이드운/알까기운/친밀도운). 같은 사람은 하루 동안 같은 결과가 나오고, 다음 날 다시 물어보면 바뀝니다. 실제 사주와는 무관한 엔터테인먼트 콘텐츠입니다.
 
-## 폴더 구조
-```
-pokecp_bot/
-├── build_dataset.py   # 종족값(PoGoAPI) + 한글 이름(PokeAPI) 병합 → data/pokemon_kr.json 생성
-├── bot.py             # 디스코드 봇 본체 (모든 슬래시 명령어)
-├── requirements.txt
-└── data/
-    └── pokemon_kr.json  # build_dataset.py 실행 후 생성됨
-```
-
-## 설치 및 실행
-
-```bash
-pip install -r requirements.txt
-python build_dataset.py   # 최초 1회, data/pokemon_kr.json 생성 (몇 분 소요)
-python bot.py
-```
-
-`bot.py` 실행 전 봇 토큰이 필요합니다. `.env` 파일에 아래처럼 넣거나 (권장):
-```
-DISCORD_BOT_TOKEN=여기에_봇_토큰
-```
-또는 `bot.py` 안의 `TOKEN = os.getenv("DISCORD_BOT_TOKEN")` 줄을 직접 토큰 문자열로 바꿔도 됩니다. (단, 이 경우 코드를 공유하거나 GitHub에 올릴 때 토큰이 그대로 노출되니 절대 커밋하지 마세요.)
-
-디스코드 개발자 포털에서 `bot`, `applications.commands` 스코프로 서버에 초대해야 합니다.
-
 ## 데이터 출처 (Credits)
 
 - **포켓몬 종족값**: [PoGoAPI](https://pogoapi.net)
